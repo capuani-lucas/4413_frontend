@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import { store } from 'store';
 import AuthComponent from 'components/AuthComponent/AuthComponent';
 import Catalog from 'components/Catalog/Catalog';
+import Cart from 'components/Cart/Cart';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -23,7 +24,7 @@ root.render(
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<AuthComponent />}>
           <Route index element={<Catalog />} />
-          <Route path="example" element={<Example />} />
+          <Route path="cart" element={<Cart />} />
         </Route>
       </Routes>
     </BrowserRouter>

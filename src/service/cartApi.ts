@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { getAuthBaseQuery } from "./utils";
 
 
-type CartItem = {
+export type CartItem = {
   id: number;
   product: Product;
   quantity: number;
@@ -27,7 +27,7 @@ export const cartApi = createApi({
     }),
     removeFromCart: builder.mutation<CartItem, number>({
       query: (cartId) => ({
-        url: `remo/${cartId}/`,
+        url: `remove/${cartId}/`,
         method: 'DELETE',
       }),
     }),
@@ -38,6 +38,12 @@ export const cartApi = createApi({
         body: { quantity },
       }),
     }),
+    clearCart: builder.mutation<void, void>({
+      query: () => ({
+        url: 'clear/',
+        method: 'POST',
+      }),
+    })
   }),
 });
 
@@ -45,5 +51,6 @@ export const {
   useGetCartQuery, 
   useAddToCartMutation, 
   useRemoveFromCartMutation, 
-  useUpdateCartMutation 
+  useUpdateCartMutation,
+  useClearCartMutation
 } = cartApi;

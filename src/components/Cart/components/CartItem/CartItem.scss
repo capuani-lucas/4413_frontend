@@ -1,0 +1,42 @@
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: space-between;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+
+  &__left {
+    img {
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  &__right {
+    flex: 1;
+    display: flex;
+    margin-left: 3rem;
+    justify-content: space-between;
+    align-items: center;
+
+    // first p child
+    & > div > p:first-child {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    &__remove {
+      cursor: pointer;
+      color: navy;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      background-color: white;
+    }
+
+  }
+
+}
