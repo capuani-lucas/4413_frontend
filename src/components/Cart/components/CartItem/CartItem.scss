@@ -23,6 +23,11 @@
     align-items: center;
 
     // first p child
+
+    & > div {
+      flex: 1;
+    }
+
     & > div > p:first-child {
       font-size: 1rem;
       font-weight: bold;

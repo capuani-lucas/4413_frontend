@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Actions.scss";
 import { useNavigate } from "react-router-dom";
 import { cartApi, useClearCartMutation } from "service/cartApi";
@@ -11,6 +11,10 @@ const Actions: React.FunctionComponent = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const [clearCart, result] = useClearCartMutation();
+
+  const [firstName, setFirstName] = useState<string>('');
+  const [lastName, setLastName] = useState<string>('');
+  const [address, setAddress] = useState<string>('');
 
   const handleClearCart = () => {
     clearCart()
@@ -31,6 +35,33 @@ const Actions: React.FunctionComponent = () => {
 
   return (
     <div className="actions">
+
+      <div className="actions__form">
+        <div>
+          <p>First Name</p>
+          <input 
+            type="text" 
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+        </div>
+        <div>
+          <p>Last Name</p>
+          <input
+            type="text" 
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </div>
+        <div>
+          <p>Address</p>
+          <input 
+            type="text" 
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+        </div>
+      </div>
       <button 
         className="actions__checkout"
         onClick={() => navigate('/checkout')}
