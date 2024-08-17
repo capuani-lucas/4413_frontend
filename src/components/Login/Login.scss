@@ -1,0 +1,83 @@
+
+.login {
+
+  min-height: 100vh;
+  display: flex;
+
+  &__left {
+    flex: 1;
+    margin-top: 8rem;
+    
+    &__con {
+      
+      max-width: 30rem;
+      margin: 0 auto;
+      text-align: center;
+
+      &__error {
+        color: red;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      &__field {
+        margin-bottom: 3rem;
+        p {
+          margin: 0;
+          margin-bottom: 0.5rem;
+          font-size: 2rem;
+          font-weight: bold;
+          text-align: left;
+        }
+
+        input {
+          width: 100%;
+          padding: 1.5rem;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          box-sizing: border-box;
+        }
+      }
+
+      &__login {
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 1.5rem;
+        background-color: navy;
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+
+      &__register {
+        margin-top: 4rem;
+        background-color: white;
+        color: navy;
+        border: none;
+        font-size: medium;
+        font-weight: bold;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+
+    }
+  }
+
+  &__right {
+    flex: 1;
+    background-color: navy;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .login {
+    flex-direction: column;
+    &__left {
+      padding: 0 2rem;
+    }
+    &__right {
+      display: none;
+    }
+  }
+}

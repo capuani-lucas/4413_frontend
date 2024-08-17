@@ -1,9 +1,17 @@
 import React from 'react';
-import Example from 'components/Example';
 import './styles/home.scss';
-import { Link, Outlet } from 'react-router-dom';
+import { useGetProductsQuery } from 'service/catalogAPI';
+import { logout } from 'service/utils';
 
 export default function Home(): JSX.Element {
+
+
+  const { data, isLoading, error } = useGetProductsQuery();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="home">
       hey1
@@ -13,9 +21,12 @@ export default function Home(): JSX.Element {
           paddingBottom: '1rem',
         }}
       >
-        <Link to="/example">Example</Link>
+        <button
+          onClick={() => logout()}
+        >
+          test
+        </button>
       </nav>
-      <Outlet />
       <h1>hey</h1>
     </div>
   );

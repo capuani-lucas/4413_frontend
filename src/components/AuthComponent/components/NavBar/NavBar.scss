@@ -1,0 +1,41 @@
+
+
+.nav {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  h1 {
+    margin: 0;
+  }
+
+  &__center {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: navy;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    &__active {
+      color: green !important;
+    }
+  }
+  &__logout {
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 2rem;
+  }
+
+}
