@@ -3,15 +3,12 @@ import "./NavBar.scss";
 
 import { logout } from "service/utils";
 import { Link } from "react-router-dom";
+import CartOverview from "./components/CartOverview/CartOverview";
 
 const routes = [
   {
     path: "/",
     name: "Catalog",
-  },
-  {
-    path: "/cart",
-    name: "Cart",
   },
   {
     path: "/profile",
@@ -37,14 +34,18 @@ const NavBar: React.FunctionComponent = () => {
           </Link>
         ))}
       </div>
-      <button
-        className="nav__logout"
-        onClick={() => {
-          logout();
-        }}
-      >
-        Logout
-      </button>
+      <div className="nav__right">
+
+        <CartOverview />
+        <button
+          className="nav__logout"
+          onClick={() => {
+            logout();
+          }}
+        >
+          Logout
+        </button>
+      </div>
     </nav>
   );
 };

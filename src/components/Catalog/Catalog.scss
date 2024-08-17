@@ -1,0 +1,14 @@
+
+
+.catalog {
+
+  padding: 2rem;
+  max-width: 60rem;
+  margin: 0 auto;
+
+  &__products {
+    display: flex;
+    gap: 2rem;
+  }
+
+}

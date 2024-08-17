@@ -5,12 +5,12 @@ import './index.scss';
 import Example from 'components/Example';
 import reportWebVitals from './reportWebVitals';
 
-import Home from './components/Home';
 import Login from 'components/Login/Login';
 import Signup from 'components/Signup/Signup';
 import { Provider } from 'react-redux';
 import { store } from 'store';
 import AuthComponent from 'components/AuthComponent/AuthComponent';
+import Catalog from 'components/Catalog/Catalog';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -22,7 +22,7 @@ root.render(
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<AuthComponent />}>
-          <Route index element={<Home />} />
+          <Route index element={<Catalog />} />
           <Route path="example" element={<Example />} />
         </Route>
       </Routes>

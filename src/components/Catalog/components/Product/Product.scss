@@ -1,0 +1,24 @@
+
+.product {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: fit-content;
+  padding: 1rem;
+
+  &__top {
+    img {
+      width: 200px;
+      height: auto;
+    }
+  }
+
+  &__bottom {
+    &__add {
+      border: none;
+      color: navy;
+      font-weight: bold;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+
+}

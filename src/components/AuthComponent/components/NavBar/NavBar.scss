@@ -29,6 +29,12 @@
       color: green !important;
     }
   }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
   &__logout {
     font-weight: bold;
     font-size: 1.5rem;
