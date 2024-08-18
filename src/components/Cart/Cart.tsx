@@ -1,8 +1,8 @@
 import React from "react";
 import "./Cart.scss";
 import { useGetCartQuery } from "service/cartApi";
-import Actions from "./components/Actions/Actions";
 import CartItem from "./components/CartItem/CartItem";
+import Checkout from "./components/Checkout/Checkout";
 
 const Cart: React.FunctionComponent = () => {
 
@@ -32,7 +32,7 @@ const Cart: React.FunctionComponent = () => {
           </div>
         ))}
       </div>
-      <Actions />
+      <Checkout />
     </div>
   );
 }

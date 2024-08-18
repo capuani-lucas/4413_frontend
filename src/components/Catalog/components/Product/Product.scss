@@ -1,8 +1,9 @@
 
 .product {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  width: fit-content;
+  width: 17rem;
   padding: 1rem;
+  box-sizing: border-box;
 
   &__top {
     img {
@@ -12,12 +13,25 @@
   }
 
   &__bottom {
-    &__add {
-      border: none;
-      color: navy;
-      font-weight: bold;
-      background-color: white;
-      cursor: pointer;
+    &__buttons {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      &__add {
+        border: none;
+        color: navy;
+        font-weight: bold;
+        background-color: white;
+        cursor: pointer;
+      }
+      &__view {
+        border: none;
+        color: navy;
+        font-weight: bold;
+        background-color: white;
+        cursor: pointer;
+        font-size: 1rem;
+      }
     }
   }
 

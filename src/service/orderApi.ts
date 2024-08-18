@@ -13,6 +13,9 @@ export type Order = {
   first_name: string;
   last_name: string;
   address: string;
+  card_number: string;
+  card_expiry: string;
+  card_cvv: string;
 };
 
 export const orderApi = createApi({
@@ -22,11 +25,11 @@ export const orderApi = createApi({
     getOrders: builder.query<{orders: Order[]}, void>({
       query: () => '/',
     }),
-    createOrder: builder.mutation<Order, { first_name: string, last_name: string, address: string }>({
-      query: ({ first_name, last_name, address }) => ({
+    createOrder: builder.mutation<Order, { first_name: string, last_name: string, address: string, card_number: string, card_expiry: string, card_cvv: string }>({
+      query: (data) => ({
         url: '/',
         method: 'POST',
-        body: { first_name, last_name, address },
+        body: data,
       }),
     })
   }),

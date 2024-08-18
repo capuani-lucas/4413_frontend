@@ -1,0 +1,43 @@
+
+.order {
+
+  max-width: 60rem;
+  margin: 0 auto;
+
+  &__orders {
+    &__order {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      margin: 2rem 0;
+
+      &__left {
+        img {
+          width: 100px;
+          height: auto;
+        }
+      }
+
+      &__right {
+        flex: 1;
+        & > div {
+          display: flex;
+
+          & > div {
+            flex: 1;
+
+            & > p:first-child {
+              margin: 0;
+              font-weight: bold;
+            }
+
+          }
+
+        }
+      }
+
+    }
+  }
+}

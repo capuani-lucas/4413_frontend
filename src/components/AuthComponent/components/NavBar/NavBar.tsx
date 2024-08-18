@@ -11,8 +11,8 @@ const routes = [
     name: "Catalog",
   },
   {
-    path: "/profile",
-    name: "Profile",
+    path: "/orders",
+    name: "Orders",
   }
 ]
 

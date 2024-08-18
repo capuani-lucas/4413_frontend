@@ -1,10 +1,8 @@
 import React from "react";
 import "./Product.scss";
 import { Product as ProductType } from "service/catalogAPI";
-import { cartApi, useAddToCartMutation } from "service/cartApi";
-import { toast } from "react-toastify";
-import { AppDispatch } from "store";
-import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useAddProductToCart } from "components/Catalog/hooks/useAddProductToCart";
 
 type ProductProps = {
   product: ProductType;
@@ -12,27 +10,8 @@ type ProductProps = {
 
 const Product: React.FunctionComponent<ProductProps> = ({ product }) => {
 
-  const [addToCart, result] = useAddToCartMutation();
-
-  const dispatch = useDispatch<AppDispatch>();
-
-  const addProductToCart = () => {
-    addToCart({ product: product.id, quantity: 1 })
-      .then((data: any) => {
-        if (data.error) {
-          toast.error(data.error.data.error, {
-            position: "bottom-right"
-          });
-        }
-        else {
-          dispatch(cartApi.endpoints.getCart.initiate(undefined, { forceRefetch: true }));
-          toast.success('Product added to cart', {
-            position: "bottom-right"
-          });
-
-        }
-      })
-  }
+  const navigate = useNavigate();
+  const {addProductToCart, isLoading } = useAddProductToCart();
 
   return (
     <div className="product">
@@ -45,13 +24,21 @@ const Product: React.FunctionComponent<ProductProps> = ({ product }) => {
         <p>{product.stock} left!</p>
         <p>Category: {product.category.name}</p>
         <p>Brand: {product.brand.name}</p>
-        <button
-          className="product__bottom__add"
-          onClick={addProductToCart}
-          disabled={result.isLoading || product.stock === 0}
-        >
-          {product.stock === 0 ? 'Out of stock' : 'Add to cart'}
-        </button>
+        <div className="product__bottom__buttons">
+          <button
+            className="product__bottom__buttons__add"
+            onClick={() => addProductToCart(product.id, 1)}
+            disabled={isLoading || product.stock === 0}
+          >
+            {product.stock === 0 ? 'Out of stock' : 'Add to cart'}
+          </button>
+          <button
+            className="product__bottom__buttons__view"
+            onClick={() => navigate(`/catalog/${product.id}`)}
+          >
+            View
+          </button>
+        </div>
       </div>
     </div>
   );

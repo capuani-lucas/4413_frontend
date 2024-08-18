@@ -48,7 +48,7 @@ export const catalogApi = createApi({
         return { url: `/?${params.toString()}` };
       },
     }),
-    getProduct: builder.query<Product, number>({
+    getProduct: builder.query<{ catalog: Product }, number>({
       query: (productId) => `${productId}/`,
     }),
   }),
@@ -59,5 +59,6 @@ export const {
   useGetCategoriesQuery, 
   useGetProductsQuery, 
   useGetProductQuery,
+  useLazyGetProductQuery,
   useGetBrandsQuery
 } = catalogApi;
