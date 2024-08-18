@@ -1,0 +1,17 @@
+
+
+.catalog {
+
+  padding: 2rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  
+  &__products {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+}

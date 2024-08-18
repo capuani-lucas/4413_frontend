@@ -1,0 +1,14 @@
+
+.cart {
+
+  max-width: 60rem;
+  margin: 0 auto;
+
+  &__items {
+    &__item {
+      display: flex;
+    }
+  }
+
+
+}

@@ -1,0 +1,22 @@
+
+.checkout {
+
+  margin: 4rem 0;
+
+  &__checkout {
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+  }
+
+  &__clear {
+    @extend .checkout__checkout;
+    margin-left: 2rem;
+    background-color: red;
+  }
+
+}
