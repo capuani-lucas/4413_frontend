@@ -1,15 +1,33 @@
 
+# https://4413frontend-production.up.railway.app/
+
+# Features
+
+- Catalog view
+- Signin/signup
+- View product
+- Add to cart
+- View order history
+- Update cart
+- Logout
+- Filter catalog
+- Checkout
+
+- TypeScript - Fully typed API
+- React application
+- RTK query from Redux Toolkit to create query/mutation hooks
+- Handle refetch 
+
 # For local development
-## First time
+
+- Node v18.16.1 used
 
 ```
-docker-compose up --build
+npm install
 ```
 
-## After 
-
 ```
-docker-compose up
+npm run dev
 ```
 
 ## React router docs
