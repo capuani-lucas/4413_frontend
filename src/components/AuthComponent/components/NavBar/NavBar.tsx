@@ -4,6 +4,7 @@ import "./NavBar.scss";
 import { logout } from "service/utils";
 import { Link } from "react-router-dom";
 import CartOverview from "./components/CartOverview/CartOverview";
+import { BASE_URL } from "config";
 
 const routes = [
   {
@@ -35,8 +36,15 @@ const NavBar: React.FunctionComponent = () => {
         ))}
       </div>
       <div className="nav__right">
-
         <CartOverview />
+        <a
+          href={`${BASE_URL}/admin`}
+          target="_blank"
+          rel="noreferrer"
+          className="nav__admin"
+        >
+          Admin
+        </a>
         <button
           className="nav__logout"
           onClick={() => {

@@ -1,7 +1,5 @@
 import { BaseQueryApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
-
-
-const baseUrl = 'http://localhost:8000';
+import { BASE_URL } from "config";
 
 export const getAuthBaseQuery = (path: string) => {
   return async (args: any, api: BaseQueryApi, extraOptions: any) => {
@@ -12,7 +10,7 @@ export const getAuthBaseQuery = (path: string) => {
         Authorization: `Bearer ${token}`
       }
     }
-    const result = await fetchBaseQuery({ baseUrl: `${baseUrl}/${path}`, headers })(args, api, extraOptions);
+    const result = await fetchBaseQuery({ baseUrl: `${BASE_URL}/${path}`, headers })(args, api, extraOptions);
 
     if (result.error && result.error.status === 401) {
       localStorage.removeItem('token');

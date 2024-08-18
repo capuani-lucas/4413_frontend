@@ -44,4 +44,14 @@
     margin-left: 2rem;
   }
 
+  &__admin {
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 2rem;
+    text-decoration: none;
+  }
+
 }
