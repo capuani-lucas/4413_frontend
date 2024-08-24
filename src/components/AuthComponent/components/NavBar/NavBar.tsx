@@ -29,7 +29,7 @@ const NavBar: React.FunctionComponent = () => {
           <Link 
             to={route.path} 
             key={route.path}
-            className={window.location.pathname === route.path ? 'nav__center__active' : ''}
+            className={window.location.pathname === route.path ? 'nav__center__active' : 'nav__center__link'}
           >
             {route.name}
           </Link>
