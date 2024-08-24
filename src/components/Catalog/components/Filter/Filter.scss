@@ -11,7 +11,20 @@
 
   p {
     margin: 0;
+    margin-bottom: 0.5rem;
     font-weight: bold;
+  }
+
+  select {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+  }
+
+  input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
   }
 
 }
