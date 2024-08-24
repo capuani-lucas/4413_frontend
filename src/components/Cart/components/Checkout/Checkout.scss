@@ -1,10 +1,11 @@
+@import "colors.scss";
 
 .checkout {
 
   margin: 4rem 0;
 
   &__checkout {
-    background-color: navy;
+    background-color: $primary;
     color: white;
     font-weight: bold;
     font-size: 1rem;

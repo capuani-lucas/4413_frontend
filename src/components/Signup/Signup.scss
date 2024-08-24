@@ -1,3 +1,4 @@
+@import "colors.scss";
 
 .signup {
 
@@ -44,7 +45,7 @@
         width: 100%;
         padding: 1.5rem;
         font-size: 1.5rem;
-        background-color: navy;
+        background-color: $primary;
         color: white;
         border: none;
         cursor: pointer;
@@ -54,7 +55,7 @@
       &__login {
         margin-top: 4rem;
         background-color: white;
-        color: navy;
+        color: $primary;
         border: none;
         font-size: medium;
         font-weight: bold;
@@ -67,7 +68,7 @@
 
   &__right {
     flex: 1;
-    background-color: navy;
+    background-color: $primary;
   }
 }
 

@@ -1,7 +1,7 @@
+@import "colors.scss";
 
 .product {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  width: 17rem;
   padding: 1rem;
   box-sizing: border-box;
 
@@ -20,14 +20,14 @@
       justify-content: space-between;
       &__add {
         border: none;
-        color: navy;
+        color: $primary;
         font-weight: bold;
         background-color: white;
         cursor: pointer;
       }
       &__view {
         border: none;
-        color: navy;
+        color: $primary;
         font-weight: bold;
         background-color: white;
         cursor: pointer;
