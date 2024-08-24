@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import './Signup.scss';
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation, useSignupMutation } from "service/userAPI";
+import {
+  Box,
+  Button,
+  Input,
+  Flex,
+  Text
+} from "@chakra-ui/react";
 
 const Signup: React.FunctionComponent = () => {
 
@@ -39,51 +46,54 @@ const Signup: React.FunctionComponent = () => {
   }
 
   return (
-    <div className="signup">
-      <div className="signup__left">
-        <div className="signup__left__con">
-          <h1>Signup</h1>
+    <Flex height="100vh" align="center" justify="center" p={4}>
+          <Box className="login" w="25%" bg="teal" p={8} borderRadius='md' >
+          <Text fontSize="2xl" fontWeight="bold" textAlign="center">Sign Up</Text>
           {
             error && <p className="signup__left__con__error">{error}</p>
           }
-          <div className="signup__left__con__field">
+          <Box>
             <p>Email</p>
-            <input 
+            <Input 
+              bg="white"
               type="text" 
               placeholder="Username" 
               onChange={(e) => setUsername(e.target.value)}
               value={username}
+              mb={4}
             />
-          </div>
-          <div className="signup__left__con__field">
+          </Box>
+          <Box mb={4}>
             <p>Password</p>
-            <input 
+            <Input 
+              bg="white"
               type="password" 
               placeholder="Password" 
               onChange={(e) => setPassword(e.target.value)}
               value={password}  
             />
-          </div>
-          <button
-            className="signup__left__con__signup"
+          </Box>
+          <Button
+            mr={4}
             type="submit"
             disabled={signupResult.isLoading || loginResult.isLoading}
             onClick={handleSignup}
+            colorScheme="teal"
+
           >
             Sign Up
-          </button>
-          <button
-            className="signup__left__con__login"
+          </Button>
+          <Button
             type="submit"
             onClick={() => navigate('/login')}
             disabled={signupResult.isLoading || loginResult.isLoading}
+            colorScheme="teal"
+
           >
             Log in
-          </button>
-        </div>
-      </div>
-      <div className="signup__right"></div>
-    </div>
+          </Button>
+          </Box>
+    </Flex>
   );
 }
 

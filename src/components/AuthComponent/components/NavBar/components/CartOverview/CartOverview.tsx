@@ -2,6 +2,8 @@ import React from "react";
 import "./CartOverview.scss";
 import { useGetCartQuery } from "service/cartApi";
 import { useNavigate } from "react-router-dom";
+import {Box, Button} from '@chakra-ui/react';
+
 
 const CartOverview: React.FunctionComponent = () => {
 
@@ -13,14 +15,14 @@ const CartOverview: React.FunctionComponent = () => {
 
   const cartProductCount = data?.cart.reduce((acc, item) => acc + item.quantity, 0);
   return (
-    <div className="cartOverview">
-      <button
+    <Box>
+      <Button
         className="cartOverview__button"
         onClick={() => navigate('/cart')}
       >
         Cart ({ cartProductCount })
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 }
 

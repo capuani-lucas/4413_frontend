@@ -1,71 +1,73 @@
 import React from "react";
 import "./Order.scss";
 import { useGetOrdersQuery } from "service/orderApi";
+import {
+  Box,
+  Text
+} from "@chakra-ui/react";
 
 const Order: React.FunctionComponent = () => {
 
   const { data, error, isLoading } = useGetOrdersQuery();
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error</div>;
+  if (isLoading) return <Box>Loading...</Box>;
+  if (error) return <Box>Error</Box>;
   return (
-    <div className="order">
-      <h1>Orders</h1>
+    <Box className="order">
+    <Text fontSize="2xl" fontWeight="bold" textAlign="center">Orders</Text>
 
-      <div className="order__orders">
+      <Box className="order__orders">
         {data?.orders.map((order) => (
-          <div className="order__orders__order" key={`order-${order.id}`}>
-            <div className="order__orders__order__left">
+          <Box className="order__orders__order" key={`order-${order.id}`}>
+            <Box className="order__orders__order__left">
               <img src={order.product.image_url} alt={order.product.name} />
-            </div>
-            <div className="order__orders__order__right">
-              <div>
-                <div>
+            </Box>
+            <Box className="order__orders__order__right">
+              <Box>
+                <Box>
                   <p>Name</p>
                   <p>{order.product.name}</p>
-                </div>
-                <div>
+                </Box>
+                <Box>
                   <p>Price</p>
                   <p>${order.price}</p>
-                </div>
-                <div>
+                  </Box>
+                <Box>
                   <p>Quantity</p>
                   <p>{order.quantity}</p>
-                </div>
-                <div>
+                </Box>
+                <Box>
                   <p>Order Date</p>
                   <p>{order.created_at}</p>
-                </div>
-                <div>
+                </Box>
+                <Box>
                   <p>Delivery Address</p>
                   <p>{order.address}</p>
-                </div>
-              </div>
-              <div> 
-                <div>
+                </Box>
+              </Box>
+              <Box>
+               <Box>
                   <p>Card Number</p>
                   <p>{order.card_number}</p>
-                </div>
-                <div>
+                </Box>
+                <Box>
                   <p>Card Expiry</p>
                   <p>{order.card_expiry}</p>
-                </div>
-                <div>
+                </Box>
+                <Box>
                   <p>Card CVV</p>
                   <p>{order.card_cvv}</p>
-                </div>
-                <div>
+                </Box>
+                <Box>
                   <p>Total</p>
                   <p>${order.price * order.quantity}</p>
-                </div>
-                <div></div>
-              </div>
-            </div>
-          </div>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
         ))}
-      </div>
-
-    </div>
+      </Box>
+    </Box>
   );
 }
 

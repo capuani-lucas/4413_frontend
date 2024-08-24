@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
+import { ChakraProvider } from '@chakra-ui/react'
+
 
 import Login from 'components/Login/Login';
 import Signup from 'components/Signup/Signup';
@@ -18,7 +20,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 root.render(
-  <Provider store={store}>
+  <Provider store={store}>    
+  <ChakraProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -31,6 +34,7 @@ root.render(
         </Route>
       </Routes>
     </BrowserRouter>
+    </ChakraProvider>
   </Provider>,
 );
 

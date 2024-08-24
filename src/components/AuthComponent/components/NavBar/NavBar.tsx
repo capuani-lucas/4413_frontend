@@ -2,9 +2,13 @@ import React from "react";
 import "./NavBar.scss";
 
 import { logout } from "service/utils";
-import { Link } from "react-router-dom";
 import CartOverview from "./components/CartOverview/CartOverview";
 import { BASE_URL } from "config";
+import { Link, LinkProps, Button, Box, Text, Flex } from '@chakra-ui/react';
+import { Link as ChakraLink } from '@chakra-ui/react';
+import { Link as RouterLink } from "react-router-dom";
+
+
 
 const routes = [
   {
@@ -20,41 +24,40 @@ const routes = [
 const NavBar: React.FunctionComponent = () => {
 
   return (
-    <nav className="nav">
-      <div className="nav__left">
-        <h1>4413 Project</h1>
-      </div>
-      <div className="nav__center">
+    <Flex as="nav" bg="teal" color="white" p={4} align="center" justify="space-between">
+      <Box>
+        <h1>Movie Vault</h1>
+      </Box>
+      <Flex gap={4} alignItems='center'>
         {routes.map((route) => (
           <Link 
+            as={RouterLink}
             to={route.path} 
             key={route.path}
-            className={window.location.pathname === route.path ? 'nav__center__active' : ''}
           >
             {route.name}
           </Link>
         ))}
-      </div>
-      <div className="nav__right">
+      </Flex>
+      <Flex justify="space-between" gap={4}>
         <CartOverview />
-        <a
+        <ChakraLink
           href={`${BASE_URL}/admin`}
           target="_blank"
           rel="noreferrer"
-          className="nav__admin"
         >
-          Admin
-        </a>
-        <button
-          className="nav__logout"
+            <Button as="a">Admin</Button>
+        </ChakraLink>
+        <Button
           onClick={() => {
             logout();
           }}
         >
           Logout
-        </button>
-      </div>
-    </nav>
+        </Button>
+      </Flex>
+
+    </Flex>
   );
 };
 
