@@ -22,7 +22,7 @@ const NavBar: React.FunctionComponent = () => {
   return (
     <nav className="nav">
       <div className="nav__left">
-        <h1>Movie Vault</h1>
+        <h1>MineMarket</h1>
       </div>
       <div className="nav__center">
         {routes.map((route) => (
