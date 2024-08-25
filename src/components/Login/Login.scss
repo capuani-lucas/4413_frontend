@@ -69,6 +69,14 @@
   &__right {
     flex: 1;
     background-color: $primary;
+
+    p {
+        color: beige;
+        font-size: 2rem;
+        font-weight: bold;
+        max-width: 50rem;
+        text-align: center;
+      }
   }
 }
 

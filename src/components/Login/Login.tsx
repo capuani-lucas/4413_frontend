@@ -71,7 +71,11 @@ const Login: React.FunctionComponent = () => {
           </button>
         </div>
       </div>
-      <div className="login__right"></div>
+      <div className="login__right">
+        <p> Welcome to EECS4413 </p> 
+        <p>E-commerce Web Application </p>
+        <p> Project</p>
+      </div>
     </div>
   );
 }
