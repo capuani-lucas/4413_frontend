@@ -1,4 +1,4 @@
-
+@import "colors.scss";
 
 .nav {
 
@@ -8,26 +8,35 @@
   padding: 2rem;
   margin-bottom: 2rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: $primary;
 
   h1 {
     margin: 0;
+    color: $secondary;
   }
 
   &__center {
-    display: flex;
-    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 
     &__link {
       margin-left: 1rem;
       text-decoration: none;
-      color: navy;
+      color: $secondary;
       font-weight: bold;
       font-size: 1.5rem;
+
+      &:hover {
+        color: $active;
+        transition: 0.1s;
+      }
+
     }
 
     &__active {
       @extend .nav__center__link;
-      color: green !important;
+      color: #6ab04c !important;
     }
   }
 
@@ -39,7 +48,7 @@
   &__logout {
     @extend .nav__center__link;
     border: none;
-    background-color: white;
+    background-color: $primary;
     cursor: pointer;
   }
 
@@ -47,4 +56,35 @@
     @extend .nav__center__link;
   }
 
+}
+
+@media screen and (max-width: 56em) {
+  .nav {
+    
+    h1 {
+      display: none;
+    }
+
+    &__center {
+      left: 2rem;
+      transform: none;
+    }
+  }
+}
+
+@media screen and (max-width: 38em) {
+  .nav {
+    display: block;
+    text-align: center;
+    &__center {
+      position: relative;
+      left: 0;
+    }
+
+    &__right {
+      justify-content: center;
+    }
+
+  }
+  
 }

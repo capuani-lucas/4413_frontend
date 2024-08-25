@@ -1,12 +1,18 @@
+@import "colors.scss";
 
 .cartOverview {
 
   &__button {
-    background-color: white;
+    background-color: $primary;
     border: none;
-    color: navy;
+    color: $secondary;
     font-weight: bold;
     cursor: pointer;
     font-size: 1.5rem;
+
+    &:hover {
+      color: $active;
+      transition: 0.1s;
+    }
   }
 }

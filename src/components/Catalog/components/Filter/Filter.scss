@@ -28,3 +28,10 @@
   }
 
 }
+
+@media screen and (max-width: 56em) {
+  .filter {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

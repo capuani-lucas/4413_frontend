@@ -1,6 +1,7 @@
 
 .order {
 
+  padding: 2rem;
   max-width: 60rem;
   margin: 0 auto;
 
@@ -42,4 +43,27 @@
 
     }
   }
+}
+
+@media screen and (max-width: 44em) {
+  .order {
+    &__orders {
+      &__order {
+        flex-direction: column;
+        gap: 1rem;
+        &__left {
+          margin-right: 0;
+        }
+
+        &__right {
+          & > div {
+            flex-direction: column;
+            gap: 1rem;
+          }
+        }
+
+      }
+    }
+  }
+  
 }
